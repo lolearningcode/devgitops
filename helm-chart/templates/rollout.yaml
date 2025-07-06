@@ -20,12 +20,16 @@ spec:
         ports:
         - containerPort: 5000
   strategy:
-    canary:
-      steps:
+  canary:
+    steps:
       - setWeight: 20
-      - pause:
-          duration: 60
+      - pause: { duration: 60 }
+      - analysis:
+          templates:
+          - templateName: success-rate
       - setWeight: 60
-      - pause:
-          duration: 120
+      - pause: { duration: 120 }
+      - analysis:
+          templates:
+          - templateName: success-rate
       - setWeight: 100
