@@ -13,5 +13,6 @@ spec:
     matchNames:
       - devgitops
   endpoints:
-    - port: metrics
-      interval: 15s
+  - port: metrics
+    path: /metrics
+    interval: 15s
