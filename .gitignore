@@ -1,4 +1,16 @@
+# Ignore any .terraform folders anywhere
 **/.terraform/
-*.tfstate
-*.tfstate.backup
-*.log
+
+# Ignore all tfstate and backup state files anywhere
+**/*.tfstate
+**/*.tfstate.backup
+# Ignore all PEM files anywhere in the repo
+**/*.pem
+# Ignore any .log files
+**/*.log
+
+# Optional: ignore crash logs
+**/crash.log
+
+# Optional: ignore Terraform variable files with secrets (if you ever use them)
+**/*.tfvars
